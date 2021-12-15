@@ -1,9 +1,5 @@
 # a laravel package show table columns and comment
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/leo-yi/laravel-fillable.svg?style=flat-square)](https://packagist.org/packages/leo-yi/laravel-fillable)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/leo-yi/laravel-fillable/Check%20&%20fix%20styling?label=code%20style)](https://github.com/leo-yi/laravel-fillable/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/leo-yi/laravel-fillable.svg?style=flat-square)](https://packagist.org/packages/leo-yi/laravel-fillable)
-
 ## Installation
 
 You can install the package via composer:
