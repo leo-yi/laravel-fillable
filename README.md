@@ -9,7 +9,7 @@
 You can install the package via composer:
 
 ```bash
-composer require leo-yi/laravel-fillable
+composer require leo-yi/laravel-fillable --dev
 ```
 
 You can publish the config file with:
