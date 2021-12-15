@@ -14,7 +14,7 @@ composer require leo-yi/laravel-fillable
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --tag="laravel-fillable-config"
+php artisan vendor:publish --tag="fillable-config"
 ```
 
 ## Usage
