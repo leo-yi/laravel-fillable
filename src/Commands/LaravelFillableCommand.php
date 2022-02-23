@@ -55,6 +55,9 @@ class LaravelFillableCommand extends Command
             case 2:
                 $this->info("'" . $key . "'" . ' => ' . "'', // " . $comment . '');
                 break;
+            case 3:
+                $this->info("'" . $key . "'" . ' => ' . "\$this->" . $key . ", // " . $comment . '');
+                break;
             default:
                 $this->info("'" . $key . "',");
         }

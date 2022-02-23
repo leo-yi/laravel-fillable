@@ -50,6 +50,18 @@ php artisan fillable table_name 2
 'created_at' => '', // 创建时间
 ```
 
+### Third Model: table comment for array key comment and bind key
+```shell
+php artisan fillable table_name 3
+```
+
+```php
+'id' => $this->id, // ID
+'name' => $this->name, // 名称
+'age' => $this->age, // 年龄
+'created_at' => $this->created_at, // 创建时间
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
