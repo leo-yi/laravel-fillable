@@ -15,22 +15,39 @@ php artisan vendor:publish --tag="fillable-config"
 
 ## Usage
 
-```php
-// only columns
+### Default model: only columns
+```shell
 php artisan fillable table_name
+```
 
+```php
 'id',
 'title',
 'age',
 'created_at',
+```
 
-// columns with comment
+### First Model: columns with table comment
+```shell
 php artisan fillable table_name 1
+```
 
+```php
 'id' => 'ID',
 'name' => '名称',
 'age' => '年龄',
 'created_at' => '',
+```
+### Second Model: table comment for array key comment
+```shell
+php artisan fillable table_name 2
+```
+
+```php
+'id' => '', // ID
+'name' => '', // 名称
+'age' => '', // 年龄
+'created_at' => '', // 创建时间
 ```
 
 ## Changelog
