@@ -27,7 +27,7 @@ php artisan fillable table_name
 'created_at',
 ```
 
-### First Model: columns with table comment
+### First model: columns with table comment
 ```shell
 php artisan fillable table_name 1
 ```
@@ -38,7 +38,7 @@ php artisan fillable table_name 1
 'age' => '年龄',
 'created_at' => '',
 ```
-### Second Model: table comment for array key comment
+### Second model: table comment for array key comment
 ```shell
 php artisan fillable table_name 2
 ```
@@ -50,7 +50,7 @@ php artisan fillable table_name 2
 'created_at' => '', // 创建时间
 ```
 
-### Third Model: table comment for array key comment and bind key
+### Third model: table comment for array key comment and bind key
 ```shell
 php artisan fillable table_name 3
 ```
@@ -60,6 +60,17 @@ php artisan fillable table_name 3
 'name' => $this->name, // 名称
 'age' => $this->age, // 年龄
 'created_at' => $this->created_at, // 创建时间
+```
+
+### Fourth mode: model comment for phpstorm
+```shell
+php artisan fillable table_name 4
+```
+
+```php
+* @property bigint $id // Id
+* @property string $name // 姓名
+* @property int $age // 年龄
 ```
 
 ## Changelog
