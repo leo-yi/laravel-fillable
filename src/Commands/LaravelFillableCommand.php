@@ -72,7 +72,7 @@ class LaravelFillableCommand extends Command
                 break;
             case 4:
                 //  * @property int $business_type
-                $this->info('* @property ' . $this->parseType($type) . ' $' . $key . ' // ' . $comment);
+                $this->info('* @property ' . $this->parseType($type) . ' $' . $key . ' ' . $comment);
                 break;
             default:
                 $this->info("'" . $key . "',");
