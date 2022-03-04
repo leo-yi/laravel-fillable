@@ -14,6 +14,13 @@ class LaravelFillableCommand extends Command
 
     public $description = 'show tables columns and comment';
 
+    const MAPPING= [
+        'string'  => ['datetime', 'year', 'date', 'time', 'timestamp', 'varchar', 'text', 'string', 'char', 'enum', 'tinytext', 'mediumtext', 'longtext', 'longblob', 'mediumblob', 'tinyblob', 'blob'],
+        'int'     => ['bigint', 'int', 'integer', 'tinyint', 'smallint', 'mediumint', 'boolean'],
+        'float'   => ['float', 'decimal', 'numeric', 'dec', 'fixed', 'double', 'real', 'double precision'],
+        'boolean' => ['bit'],
+    ];
+
     public function handle(): int
     {
         $tableName = $this->argument('table');
@@ -65,10 +72,24 @@ class LaravelFillableCommand extends Command
                 break;
             case 4:
                 //  * @property int $business_type
-                $this->info('* @property ' . $type . ' $' . $key . ' // ' . $comment);
+                $this->info('* @property ' . $this->parseType($type) . ' $' . $key . ' // ' . $comment);
                 break;
             default:
                 $this->info("'" . $key . "',");
+        }
+    }
+
+    /**
+     * Convert database types to PHP data types
+     * @param string $dataType
+     * @return string|void
+     */
+    protected function parseType(string $dataType)
+    {
+        foreach (self::MAPPING as $phpType => $database) {
+            if (in_array($dataType, $database)) {
+                return $phpType;
+            }
         }
     }
 }
