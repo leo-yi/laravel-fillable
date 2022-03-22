@@ -3,6 +3,7 @@
 ## Installation
 
 ## 框架要求
+- leo-yi/laravel-fillable:^2.0 -> Laravel >= 7.0
 - leo-yi/laravel-fillable:^1.0 -> Laravel ^6.0
 
 You can install the package via composer:
