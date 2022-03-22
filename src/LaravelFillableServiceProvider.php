@@ -2,16 +2,22 @@
 
 namespace Leoyi\LaravelFillable;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Leoyi\LaravelFillable\Commands\LaravelFillableCommand;
 
-class LaravelFillableServiceProvider extends PackageServiceProvider
+class LaravelFillableServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function boot()
     {
-        $package->name('laravel-fillable')
-            ->hasConfigFile()
-            ->hasCommand(LaravelFillableCommand::class);
+        if($this->app->runningInConsole()){
+            // publish config file
+            $this->publishes([
+                __DIR__ . '/../config/fillable.php' => config_path('fillable.php'),
+            ], 'laravel-fillable');
+
+            $this->commands([
+                LaravelFillableCommand::class
+            ]);
+        }
     }
 }

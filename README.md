@@ -2,6 +2,9 @@
 
 ## Installation
 
+## 框架要求
+- leo-yi/laravel-fillable:^1.0 -> Laravel ^6.0
+
 You can install the package via composer:
 
 ```bash
@@ -10,7 +13,7 @@ composer require leo-yi/laravel-fillable --dev
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --tag="fillable-config"
+php artisan vendor:publish --provider="Leoyi\LaravelFillable\LaravelFillableServiceProvider" --tag="laravel-fillable"
 ```
 
 ## Usage
@@ -50,9 +53,21 @@ php artisan fillable table_name 2
 'created_at' => '', // 创建时间
 ```
 
-### Third model: table comment for array key comment and bind key
+### Third model: Generates an array of key-value pairs, excluding comments
 ```shell
 php artisan fillable table_name 3
+```
+
+```php
+'id' => $this->id,
+'name' => $this->name,
+'age' => $this->age,
+'created_at' => $this->created_at,
+```
+
+### Third model: Generates an array of key-value pairs, including comments
+```shell
+php artisan fillable table_name 4
 ```
 
 ```php
@@ -64,7 +79,7 @@ php artisan fillable table_name 3
 
 ### Fourth mode: model comment for phpstorm
 ```shell
-php artisan fillable table_name 4
+php artisan fillable table_name 5
 ```
 
 ```php

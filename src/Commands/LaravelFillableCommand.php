@@ -29,15 +29,15 @@ class LaravelFillableCommand extends Command
         try {
             $columns = $manager->listTableColumns($tableName);
             foreach ($columns as $key => $column) {
-                if (in_array($key, config('fillable.except'))) {
+                if (in_array($key, config('fillable.except', []))) {
                     continue;
                 }
                 $comment = $manager->listTableDetails($tableName)->getColumn($key)->getComment();
-                if ($model == 4) {
+                if ($model == 5) {
                     $type = $manager->listTableDetails($tableName)->getColumn($key)->getType()->getName();
-                    $this->outPut(intval($model), $key, $comment, $type);
+                    $this->outPut(intval($model), $key, strval($comment), $type);
                 } else {
-                    $this->outPut(intval($model), $key, $comment);
+                    $this->outPut(intval($model), $key, strval($comment));
                 }
             }
         } catch (Exception $e) {
@@ -68,9 +68,12 @@ class LaravelFillableCommand extends Command
                 $this->info("'" . $key . "'" . ' => ' . "'', // " . $comment . '');
                 break;
             case 3:
-                $this->info("'" . $key . "'" . ' => ' . "\$this->" . $key . ", // " . $comment . '');
+                $this->info("'" . $key . "'" . ' => ' . "\$this->" . $key . ",");
                 break;
             case 4:
+                $this->info("'" . $key . "'" . ' => ' . "\$this->" . $key . ", // " . $comment . '');
+                break;
+            case 5:
                 //  * @property int $business_type
                 $this->info('* @property ' . $this->parseType($type) . ' $' . $key . ' ' . $comment);
                 break;
