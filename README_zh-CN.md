@@ -1,27 +1,25 @@
-# a laravel package show table columns and comment
+# 一个生成数据表字段和注释的 Laravel 扩展包
 
-[中文文档](./README_zh-CN.md)
+## 安装
 
-## Installation
-
-## laravel framework require
+## 框架要生活方式
 - leo-yi/laravel-fillable:^2.0 -> Laravel >= 7.0
 - leo-yi/laravel-fillable:^1.0 -> Laravel ^6.0
 
-You can install the package via composer:
+通过 composer 安装:
 
 ```bash
 composer require leo-yi/laravel-fillable --dev
 ```
 
-You can publish the config file with:
+发布配置文件:
 ```bash
 php artisan vendor:publish --provider="Leoyi\LaravelFillable\LaravelFillableServiceProvider" --tag="laravel-fillable"
 ```
 
-## Usage
+## 使用
 
-### Default model: only columns
+### 默认模式: 只有字段名
 ```shell
 php artisan fillable table_name
 ```
@@ -33,7 +31,7 @@ php artisan fillable table_name
 'created_at',
 ```
 
-### First model: columns with table comment
+### 模式1: 生成数据表字段对注释的 PHP 数组键值对
 ```shell
 php artisan fillable table_name 1
 ```
@@ -42,9 +40,9 @@ php artisan fillable table_name 1
 'id' => 'ID',
 'name' => '名称',
 'age' => '年龄',
-'created_at' => '',
+'created_at' => '创建时间',
 ```
-### Second model: table comment for array key comment
+### 模式2: 生成数据表字段的 PHP 数组键值对, 并添加单行注释为数据表字段对应注释
 ```shell
 php artisan fillable table_name 2
 ```
@@ -56,7 +54,7 @@ php artisan fillable table_name 2
 'created_at' => '', // 创建时间
 ```
 
-### Third model: Generates an array of key-value pairs, excluding comments
+### 模式3: 生成数据表字段和字段对应的 $this 类型数组键值对, 不添加单行注释, 一般用于 resource 映射
 ```shell
 php artisan fillable table_name 3
 ```
@@ -68,7 +66,7 @@ php artisan fillable table_name 3
 'created_at' => $this->created_at,
 ```
 
-### Third model: Generates an array of key-value pairs, including comments
+### 模式4: 生成数据表字段和字段对应的 $this 类型数组键值对, 并添加单行注释, 一般用于 resource 映射
 ```shell
 php artisan fillable table_name 4
 ```
@@ -80,7 +78,7 @@ php artisan fillable table_name 4
 'created_at' => $this->created_at, // 创建时间
 ```
 
-### Fourth mode: model comment for phpstorm
+### 模式5:生成 Laravel Model 的类注释, 一般用于 phpstorm 中跳转
 ```shell
 php artisan fillable table_name 5
 ```
@@ -91,7 +89,7 @@ php artisan fillable table_name 5
 * @property int $age // 年龄
 ```
 
-## Changelog
+## 修改日志
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
