@@ -2,7 +2,7 @@
 
 ## 安装
 
-## 框架要生活方式
+## Laravel 框架依赖
 - leo-yi/laravel-fillable:^2.0 -> Laravel >= 7.0
 - leo-yi/laravel-fillable:^1.0 -> Laravel ^6.0
 
