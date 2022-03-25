@@ -10,8 +10,14 @@
 
 You can install the package via composer:
 
+Laravel >= 7.0 :
 ```bash
 composer require leo-yi/laravel-fillable --dev
+```
+
+Laravel ^6.0 :
+```bash
+composer require leo-yi/laravel-fillable:1.5 --dev
 ```
 
 You can publish the config file with:

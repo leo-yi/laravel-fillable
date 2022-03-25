@@ -6,10 +6,14 @@
 - leo-yi/laravel-fillable:^2.0 -> Laravel >= 7.0
 - leo-yi/laravel-fillable:^1.0 -> Laravel ^6.0
 
-通过 composer 安装:
-
+Laravel 版本大于等于 7.0 :
 ```bash
 composer require leo-yi/laravel-fillable --dev
+```
+
+Laravel 版本 6.0 :
+```bash
+composer require leo-yi/laravel-fillable:1.5 --dev
 ```
 
 发布配置文件:
